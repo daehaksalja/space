@@ -22,7 +22,7 @@
 
 <body>
 
-	<c:if test="${empty sessionScope.user_id}">
+	<c:if test="${empty sessionScope.user_no}">
 
 
 

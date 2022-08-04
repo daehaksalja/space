@@ -20,7 +20,7 @@
 <body class="sb-nav-fixed">
  
  
- <c:if test="${not empty sessionScope.user_id}">
+ <c:if test="${not empty sessionScope.user_no}">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<a class="navbar-brand ps-3" href="/">FROGame</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -140,7 +140,7 @@
 	
 	
 	
-	<c:if test="${empty sessionScope.user_id}">
+	<c:if test="${empty sessionScope.user_no}">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<a class="navbar-brand ps-3" href="/">FROGame</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">

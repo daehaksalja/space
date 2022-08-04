@@ -12,6 +12,11 @@
       select user_pw from userTBL where user_id = #{user_id}
    </select>
    
+   <select id="getRealUserNo" resultType="String">
+      select user_no from userTBL where user_id = #{user_id}
+   </select>
+   
+   
    <insert id="memberInsert">
            INSERT INTO userTBL (user_id, user_pw, user_nick, user_phone, user_email, user_adult, email_check)
            VALUES(#{user_id},#{user_pw},#{user_nick}, #{user_phone},#{user_email},#{user_adult},#{email_check})
@@ -38,7 +43,19 @@
      </delete>
      
      <select id="memberRead" resultType="org.study.home.model.MemberDTO">
-      SELECT * FROM userTBL WHERE user_id = #{user_id}
+      SELECT * FROM userTBL WHERE user_no = #{user_no}
    </select>
+   
+  <!--  <update id="memberUpdate">
+      
+      	UPDATE userTBL SET 
+      	user_id = #{user_id},
+      	user_nick = #{user_nick},
+		user_phone = #{user_phone},
+		user_email = #{user_email},
+		user_adult = #{user_adult},
+		email_check = #{user_email}
+	 	WHERE user_id = ${user_id}
+   </update> -->
 
 </mapper>

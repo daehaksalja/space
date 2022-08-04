@@ -23,39 +23,36 @@
 	<c:if test="${not empty sessionScope.user_id}">
 
 		<div class="header">
-      <h1><a href="/" class="Logo"> SPACE SHIP </a></h1>
+			<h1>
+				<a href="/" class="Logo"> SPACE SHIP </a>
+			</h1>
 
-         
 
-      
-            <a href="/moveMakeWeb2"class="a1">역사</a>
-         
-         
-            <a href="/moveMakeWeb3"class="a1">사업분야</a>
-         
-         
-            <a href="/moveMakeWeb4"class="a1">ufo</a>
-      
-         
-            <a href="/moveMakeWeb5"class="lightOna1">우주인채용</a>
-      
 
-         
-            
-         <a class="frame-btn" href="/logout"id="logoutBtn">
-        <span class="frame-btn__outline frame-btn__outline--tall">
-          <span class="frame-btn__line frame-btn__line--tall"></span>
-          <span class="frame-btn__line frame-btn__line--flat"></span>
-        </span>
-        <span class="frame-btn__outline frame-btn__outline--flat">
-          <span class="frame-btn__line frame-btn__line--tall"></span>
-          <span class="frame-btn__line frame-btn__line--flat"></span>
-        </span>
-        <span class="frame-btn__solid"></span>
-        <span class="frame-btn__text">로그아웃</span>
-      </a>
-      
-      </div>
+
+			<a href="/moveMakeWeb2" class="a1">역사</a> <a href="/moveMakeWeb3"
+				class="a1">사업분야</a> <a href="/moveMakeWeb4" class="a1">ufo</a> <a
+				href="/moveMakeWeb5" class="lightOna1">우주인채용</a> 
+				
+				<a class="frame-btn" href="/memberRead?user_id=${sessionScope.user_id}">
+				<span class="frame-btn__outline frame-btn__outline--tall"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__outline frame-btn__outline--flat"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">마이페이지</span>
+			</a> <a class="frame-btn" href="/logout" id="logoutBtn"> <span
+				class="frame-btn__outline frame-btn__outline--tall"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__outline frame-btn__outline--flat"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">로그아웃</span>
+			</a>
+
+		</div>
 	</c:if>
 
 
@@ -64,36 +61,25 @@
 
 	<c:if test="${empty sessionScope.user_id}">
 		<div class="header">
-		<h1><a href="/" class="Logo"> SPACE SHIP </a></h1>
+			<h1>
+				<a href="/" class="Logo"> SPACE SHIP </a>
+			</h1>
 
 
 
-			<a href="/moveMakeWeb2"class="a1">역사</a>
-         
-         
-            <a href="/moveMakeWeb3"class="a1">사업분야</a>
-         
-         
-            <a href="/moveMakeWeb4"class="a1">ufo</a>
-      
-         
-            <a href="/moveMakeWeb5"class="lightOna1">우주인채용</a>
-      
-
-         
-            
-         <a class="frame-btn" href="moveLogin">
-        <span class="frame-btn__outline frame-btn__outline--tall">
-          <span class="frame-btn__line frame-btn__line--tall"></span>
-          <span class="frame-btn__line frame-btn__line--flat"></span>
-        </span>
-        <span class="frame-btn__outline frame-btn__outline--flat">
-          <span class="frame-btn__line frame-btn__line--tall"></span>
-          <span class="frame-btn__line frame-btn__line--flat"></span>
-        </span>
-        <span class="frame-btn__solid"></span>
-        <span class="frame-btn__text">LOGIN</span>
-      </a>		</div>
+			<a href="/moveMakeWeb2" class="a1">역사</a> <a href="/moveMakeWeb3"
+				class="a1">사업분야</a> <a href="/moveMakeWeb4" class="a1">ufo</a> <a
+				href="/moveMakeWeb5" class="lightOna1">우주인채용</a> <a
+				class="frame-btn" href="moveLogin"> <span
+				class="frame-btn__outline frame-btn__outline--tall"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__outline frame-btn__outline--flat"> <span
+					class="frame-btn__line frame-btn__line--tall"></span> <span
+					class="frame-btn__line frame-btn__line--flat"></span>
+			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">LOGIN</span>
+			</a>
+		</div>
 	</c:if>
 
 </body>

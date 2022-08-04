@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.study.home.mapper.MemberMapper;
 import org.study.home.model.MemberDTO;
 import org.study.home.service.MemberService;
 
 @Controller
 public class MemberController {
 
+	@Autowired
+	private MemberMapper mapper;
+	
 	@Autowired
 	private MemberService memberService;
 
@@ -75,12 +79,15 @@ public class MemberController {
 
 	@PostMapping("/login")
 	public String login(MemberDTO dto, HttpServletRequest request, RedirectAttributes rttr) {
-		System.out.println(dto);
+		String resultUserNo = mapper.getRealUserNo(dto.getUser_id());
+		System.out.println("3333333333333333" + resultUserNo);
 
+		
 		String result = memberService.login(dto);
 		if (result.equals("Success")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", dto.getUser_id());
+			session.setAttribute("user_no", resultUserNo);
 			return "redirect:/";
 		} else {
 			rttr.addFlashAttribute("msg", false);
@@ -116,18 +123,18 @@ public class MemberController {
 	}
 
 	@GetMapping("/memberRead")
-	public String memberRead(@RequestParam("user_id") String user_id, Model model) {
-		System.out.println("111111111111" + user_id);
-		MemberDTO dto = memberService.memberRead(user_id);
+	public String memberRead(@RequestParam("user_no") String user_no, Model model) {
+		System.out.println("111111111111" + user_no);
+		MemberDTO dto = memberService.memberRead(user_no);
 		model.addAttribute("dto", dto);
 		return "board/memberRead";
 	}
 
 //	   @GetMapping("/memberUpdate")
-//	   public String memberUpdate(@RequestParam("m_no")String m_no, Model model) {
-//	      MemberDTO dto=   memberService.memberRead(m_no);
+//	   public String memberUpdate(@RequestParam("user_id")String user_id, Model model) {
+//	      MemberDTO dto=memberService.memberRead(user_id);
 //	       model.addAttribute("dto",dto);
-//	      return "member/memberUpdate";
+//	      return "board/memberUpdate";
 //	   }
 //	   
 //	   @PostMapping("/memberUpdate")
@@ -135,7 +142,7 @@ public class MemberController {
 //	      memberService.memberUpdate(dto);
 //	      System.out.println(dto.toString());
 //	      
-//	      return "redirect:/memberRead?m_no="+dto.getM_no();
+//      return "redirect:/memberUpdate?user_id="+dto.getUser_id();
 //	   }
 
 

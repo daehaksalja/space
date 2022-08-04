@@ -11,14 +11,11 @@
 
 <body>
 
-	<c:if test="${not empty sessionScope.user_id}">
+	<c:if test="${not empty sessionScope.user_no}">
 		<div class="header">
 			<h1 class="Logo">
-				SPACESHIP
+				SPACE SHIP
 			</h1>
-
-
-
 
 			<a href="/moveMakeWeb2" class="a1">역사</a> <a href="/moveMakeWeb3"
 				class="a1">사업분야</a> <a href="/moveMakeWeb4" class="a1">ufo</a> <a
@@ -26,7 +23,7 @@
 				
 				
 				<a class="frame-btn"
-				href="/memberRead?user_id=${sessionScope.user_id}" > <span
+				href="/memberRead?user_no=${sessionScope.user_no}" > <span
 				class="frame-btn__outline frame-btn__outline--tall"> <span
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>
@@ -75,7 +72,7 @@
 
 	</c:if>
 
-	<c:if test="${empty sessionScope.user_id}">
+	<c:if test="${empty sessionScope.user_no}">
 		<div class="header">
 			<h1 class="Logo">
 				<a href="/memberRead?user_no=${list.user_no}"> SPACE SHIP</a>

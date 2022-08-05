@@ -16,8 +16,7 @@
    전화번호 : ${dto.user_phone}<br>
    이메일 : ${dto.user_email}<br>
    성인여부 : ${dto.user_adult}<br>
-   이메일 수신여부 : ${dto.user_email}<br>
-   회원 등록일 : ${dto.user_insertDate}<br>
+   이메일 수신여부 : ${dto.email_check}<br>
    
    <a href="/memberUpdate?user_no=${dto.user_no}">수정하러 가기</a> <br>
    <a href="/">목록으로</a>

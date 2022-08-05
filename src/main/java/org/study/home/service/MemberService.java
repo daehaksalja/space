@@ -23,5 +23,5 @@ public interface MemberService {
 
 	MemberDTO memberRead(String user_no);
 	
-//	void memberUpdate(MemberDTO dto);
+	void memberUpdate(MemberDTO dto);
 }

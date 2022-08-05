@@ -1,6 +1,7 @@
 package org.study.home.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,6 +21,18 @@ import org.study.home.mapper.MemberMapper;
 import org.study.home.model.MemberDTO;
 import org.study.home.service.MemberService;
 
+//이메일 인증
+import org.springframework.core.io.FileSystemResource;
+import java.io.File;
+import java.lang.System.Logger;
+
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
+
 @Controller
 public class MemberController {
 
@@ -28,6 +41,10 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+//  이메일인증
+	@Autowired
+  	private JavaMailSender mailSender;
 
 	@PostMapping("/memberInsert")
 	public String registProcess(/* @RequestParam("user_id")String user_id, */ MemberDTO dto) {
@@ -130,20 +147,20 @@ public class MemberController {
 		return "board/memberRead";
 	}
 
-//	   @GetMapping("/memberUpdate")
-//	   public String memberUpdate(@RequestParam("user_id")String user_id, Model model) {
-//	      MemberDTO dto=memberService.memberRead(user_id);
-//	       model.addAttribute("dto",dto);
-//	      return "board/memberUpdate";
-//	   }
-//	   
-//	   @PostMapping("/memberUpdate")
-//	   public String memberUpdateProcess(MemberDTO dto) {
-//	      memberService.memberUpdate(dto);
-//	      System.out.println(dto.toString());
-//	      
-//      return "redirect:/memberUpdate?user_id="+dto.getUser_id();
-//	   }
+	   @GetMapping("/memberUpdate")
+	   public String memberUpdate(@RequestParam("user_no")String user_no, Model model) {
+	      MemberDTO dto=memberService.memberRead(user_no);
+	       model.addAttribute("dto",dto);
+	      return "board/memberUpdate";
+	   }
+	   
+	   @PostMapping("/memberUpdate")
+	   public String memberUpdateProcess(MemberDTO dto) {
+	      memberService.memberUpdate(dto);
+	      System.out.println("update ----" + dto.toString());
+	      
+      return "redirect:/memberRead?user_no="+dto.getUser_no();
+	   }
 
 
 	@PostMapping("/idCheck")
@@ -199,5 +216,81 @@ public class MemberController {
 
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value = "/sendMail", method = RequestMethod.GET)
+    public void sendMailTest() throws Exception{
+        
+        String subject = "test 메일";
+        String content = "메일 테스트 내용";
+        String from = "wklee1999@naver.com";
+        String to = "jmlee7100000000@gmail.com";
+        
+        try {
+            MimeMessage mail = mailSender.createMimeMessage();
+            MimeMessageHelper mailHelper = new MimeMessageHelper(mail,true,"UTF-8");
+           
+            mailHelper.setFrom(from);
+            mailHelper.setTo(to);
+            mailHelper.setSubject(subject);
+            mailHelper.setText(content, true);
+            // true는 html을 사용하겠다는 의미입니다.
+            
+            FileSystemResource file = new FileSystemResource(new File("/home/lwk/test.txt")); 
+            mailHelper.addAttachment("test.txt", file);
+            
+            /*
+             * 단순한 텍스트만 사용하신다면 다음의 코드를 사용하셔도 됩니다. 
+             */
+            mailHelper.setText(content);
+            mailSender.send(mail);
+            
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+   /* 이메일 인증 */
+    @RequestMapping(value="/mailCheck", method=RequestMethod.GET)
+    @ResponseBody
+    public String mailCheckGET(String user_email) throws Exception{
+        
+        /* 뷰(View)로부터 넘어온 데이터 확인 */
+      
+      
+      
+        System.out.println("이메일 데이터 전송 확인");
+        System.out.println("인증번호 : " + user_email);
+       
+        Random random = new Random();
+        int checkNum = random.nextInt(888888) + 111111;
+        System.out.println("인증번호 " + checkNum);
+        
+        String setFrom = "wklee1999@naver.com";
+        String toMail = user_email;
+        String title = "회원가입 인증 이메일 입니다.";
+        String content = "홈페이지를 방문해주셔서 감사합니다." +
+                            "<br><br>" + 
+                            "인증 번호는 " + checkNum + "입니다." + 
+                            "<br>" + 
+                            "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+        
+        try {
+               
+               MimeMessage message = mailSender.createMimeMessage();
+               MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+               helper.setFrom(setFrom);
+               helper.setTo(toMail);
+               helper.setSubject(title);
+               helper.setText(content,true);
+               mailSender.send(message);
+               
+           }catch(Exception e) {
+               e.printStackTrace();
+           }
+
+          String num = Integer.toString(checkNum);
+          return num;
+    }
+ 
 
 }

@@ -435,3 +435,25 @@ height:420px;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px aqua, 0 0 35px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 75px aqua;
   }
 }
+
+
+/* 이메일 인증관련*/
+#mail_check_input_box_false{
+    background-color:rgb(255, 255, 255);
+}
+ 
+#mail_check_input_box_true{
+    background-color:rgb(255, 255, 255);
+}
+
+
+
+.mail_check_input{
+   width: 300px;
+   height: 35px;
+   border-radius: 10px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+
+}
+

@@ -93,10 +93,12 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
-	/*
-	 * @Override public void memberUpdate(MemberDTO dto) { mapper.memberUpdate(dto);
-	 * }
-	 */
+	@Override
+	  public void memberUpdate(MemberDTO dto) { 
+		  mapper.memberUpdate(dto);
+	  }
+	 
+	
 	@Override
 	public MemberDTO memberRead(String user_no) {
 		return mapper.memberRead(user_no);

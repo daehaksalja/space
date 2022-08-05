@@ -28,6 +28,8 @@ public interface MemberMapper {
 	public MemberDTO memberRead(String user_no);
 
 	public void memberUpdate(MemberDTO dto);
+
+	public String getRealisAdmin(String user_id);
 	
 
 }

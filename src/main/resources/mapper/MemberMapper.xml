@@ -49,6 +49,10 @@
 		SELECT * FROM userTBL WHERE user_no = #{user_no}
 	</select>
 
+	<select id="getRealisAdmin" resultType="String">
+      select adminCk from userTBL where user_id = #{user_id}
+   </select>
+
 	<update id="memberUpdate">
 
 		UPDATE userTBL SET user_id = #{user_id},user_nick = #{user_nick},user_phone

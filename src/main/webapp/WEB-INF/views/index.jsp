@@ -40,7 +40,10 @@
 					class="frame-btn__line frame-btn__line--flat"></span>
 			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">로그아웃</span>
 			</a>
-
+<c:if test="${not empty sessionScope.isAdmin}">
+         
+         
+         </c:if>
 		</div>
 		<video class="mainVideo"
 			src="../../resources/css/nebula_-_25168 (Original).mp4" muted

@@ -97,6 +97,8 @@ public class MemberController {
 	@PostMapping("/login")
 	public String login(MemberDTO dto, HttpServletRequest request, RedirectAttributes rttr) {
 		String resultUserNo = mapper.getRealUserNo(dto.getUser_id());
+		String isAdmin = mapper.getRealisAdmin(dto.getUser_id());
+
 		System.out.println("3333333333333333" + resultUserNo);
 
 		
@@ -105,6 +107,7 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", dto.getUser_id());
 			session.setAttribute("user_no", resultUserNo);
+			session.setAttribute("isAdmin", isAdmin);
 			return "redirect:/";
 		} else {
 			rttr.addFlashAttribute("msg", false);

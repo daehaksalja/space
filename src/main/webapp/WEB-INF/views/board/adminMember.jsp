@@ -58,7 +58,7 @@
 										</tr> --%>
 
 
-	<c:if test="${empty sessionScope.user_no}">
+
 
 
 
@@ -231,7 +231,7 @@
 
 					</div>
 				</button> -->
-	</c:if>
+
 
 
 

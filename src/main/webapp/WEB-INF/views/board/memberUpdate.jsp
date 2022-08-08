@@ -129,8 +129,8 @@
 
 
 				<div class="goRegister">
-					<span class="registText">로그인 하러 가시겠습니까?</span> <a href="/moveLogin"
-						class="registText2">로그인</a>
+					<span class="registText">홈으로 가고싶으십니까?</span> <a href="/"
+						class="registText2">HOME</a>
 						
 						
 				</div>

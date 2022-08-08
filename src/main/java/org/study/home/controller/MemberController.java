@@ -93,6 +93,10 @@ public class MemberController {
 	public String moveMemberRead() {
 		return "board/memberRead";
 	}
+	@GetMapping("/moveMemberRead2")
+	public String moveMemberRead2() {
+		return "board/memberRead2";
+	}
 
 	@PostMapping("/login")
 	public String login(MemberDTO dto, HttpServletRequest request, RedirectAttributes rttr) {
@@ -124,14 +128,6 @@ public class MemberController {
 		return "board/adminMember";
 	}
 
-	@GetMapping("/adminMember")
-	public String adminMember(Model model) {
-
-		List<MemberDTO> list = memberService.userList();
-		model.addAttribute("list", list);
-
-		return "board/adminMember";
-	}
 
 	@GetMapping("/memberDelete")
 	public String memberDelete(@RequestParam("user_id") String user_id) {
@@ -149,6 +145,8 @@ public class MemberController {
 		model.addAttribute("dto", dto);
 		return "board/memberRead";
 	}
+	
+	
 
 	   @GetMapping("/memberUpdate")
 	   public String memberUpdate(@RequestParam("user_no")String user_no, Model model) {

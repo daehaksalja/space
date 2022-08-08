@@ -14,6 +14,6 @@ public class MemberDTO {
 	private boolean user_adult;
 	private String user_email;
 	private boolean email_check;
-	private boolean adminCk;
+	private int adminCk;
 	private Timestamp user_insertDate;
 }

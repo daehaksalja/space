@@ -34,7 +34,7 @@
 				class="a1">사업분야</a> <a href="/moveMakeWeb4" class="a1">ufo</a> <a
 				href="/moveMakeWeb5" class="lightOna1">우주인채용</a> 
 				
-				<a class="frame-btn" href="/memberRead?user_id=${sessionScope.user_id}">
+				<a class="frame-btn" href="/memberRead?user_no=${sessionScope.user_no}">
 				<span class="frame-btn__outline frame-btn__outline--tall"> <span
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>

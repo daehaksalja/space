@@ -19,40 +19,58 @@
 <link rel="stylesheet" href="${path}/resources/css/login.css">
 </head>
 
+<style>
+html, body, div, video {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 0px, 0px, 0px, 0px;
+	margin: 0px, 0px, 0px, 0px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.container {
+	
+}
+</style>
 
 <body>
 
 	<c:if test="${empty sessionScope.user_no}">
 
 
+		<div class="tiledBackground">
 
 
 
 
-		<div class="page">
+			<div class="page">
 
-			<form method="post" action="/login" id="customerLogin" name="login">
-				<div class="neon_effect">
-					<h1 class="mainText">
-						<p>로그인</p>
-					</h1>
-					<div>
-						<p class="mainText2">아이디와 비밀번호를 입력해 주시오.</p>
-					</div>
-
-
-					<div class="inputTag">
-						<div class="errorMsg" id="errorMsg"></div>
-						<div class="highlight"></div>
-
-						<div class="form-box">
-
-							 <input type="text" name="user_id" id="id" class="input-ty1"
-								placeholder="아이디" /> <input type="password" name="user_pw" id="pw"
-								class="input-ty1" placeholder="비밀번호" />
-
+				<form method="post" action="/login" id="customerLogin" name="login">
+					<div class="neon_effect">
+						<h1 class="mainText">
+							<p>로그인</p>
+						</h1>
+						<div>
+							<p class="mainText2">아이디와 비밀번호를 입력해 주시오.</p>
 						</div>
-						<!-- <div class="textBox1">
+
+
+						<div class="inputTag">
+							<div class="errorMsg" id="errorMsg"></div>
+							<div class="highlight"></div>
+
+							<div class="form-box">
+
+								<input type="text" name="user_id" id="id" class="input-ty1"
+									placeholder="아이디" /> <input type="password" name="user_pw"
+									id="pw" class="input-ty1" placeholder="비밀번호" />
+
+							</div>
+							<!-- <div class="textBox1">
 							<input type="text" class="textBoxInput1" name="user_id" id="id"
 								required="required" placeholder="아이디" aria-label="ID">
 						</div>
@@ -67,27 +85,35 @@
 						</div> -->
 
 
-						<button type="submit" id="loginBtn">
-							<div class="back">
-								<a class="btn btn--1"><p class="pGold">로그인하기</p></a>
+							
+
+
+							<button type="submit" id="loginBtn" class="sujungBtn">
+								<a class="frame-btn2"> <span
+									class="frame-btn2__outline frame-btn2__outline--tall"> <span
+										class="frame-btn2__line frame-btn2__line--tall"></span> <span
+										class="frame-btn2__line frame-btn2__line--flat"></span>
+								</span> <span class="frame-btn2__outline frame-btn2__outline--flat">
+										<span class="frame-btn2__line frame-btn2__line--tall"></span>
+										<span class="frame-btn2__line frame-btn2__line--flat"></span>
+								</span> <span class="frame-btn2__solid"></span> <span
+									class="frame-btn2__text">로그인하기</span>
+								</a>
+							</button>
+
+
+							<div class="goRegister">
+								<span class="registText"><p>계정이 없습니까?</p></span> <a
+									href="/moveRegist" class="registText2"><p>회원가입하러 가기</p></a>
 
 							</div>
-						</button>
-
-
-
-						<div class="goRegister">
-							<span class="registText"><p>계정이 없습니까?</p></span> <a href="/moveRegist"
-								class="registText2"><p> 회원가입하러 가기</p></a>
-
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
 
 
 
-
+			</div>
 
 			<script>
 				/* var focus = false;

@@ -34,7 +34,7 @@
 
 
 			<a href="/moveMakeWeb5" class="a1">우주인채용</a> <a class="frame-btn"
-				href="/memberRead?user_id=${sessionScope.user_id}"> <span
+				href="/memberRead?user_no=${sessionScope.user_no}"> <span
 				class="frame-btn__outline frame-btn__outline--tall"> <span
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>

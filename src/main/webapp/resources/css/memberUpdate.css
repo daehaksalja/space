@@ -298,7 +298,12 @@ h1{
 
 
 /*로그인버튼 장식*/
-
+.sujungBtn{
+	margin-top:40px;
+	margin-left:45%;
+	border-color: black;
+	background-color: black;
+}
 
 
 .frame-btn {
@@ -321,6 +326,7 @@ h1{
 .frame-btn:hover .frame-btn__text {
   color: white;
 }
+
 .frame-btn__solid {
   position: absolute;
   top: 0;
@@ -407,6 +413,114 @@ h1{
 .frame-btn:hover .frame-btn__line:before, .frame-btn:hover .frame-btn__line:after {
   transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+.frame-btn2 {
+  line-height: 35px;
+  display: inline-block;
+  padding: 25px 30px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  position: relative;
+  width: 150px
+}
+.frame-btn2__text {
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 300ms ease;
+  position: relative;
+}
+.frame-btn2:hover .frame-btn2__text {
+  color: white;
+}
+.frame-btn2__solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  background-color: #00ffff;
+  width: calc(100% - (5px * 4));
+  height: calc(100% - (5px * 4));
+  transform-origin: 50%;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn2:hover .frame-btn2__solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.frame-btn2__outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.frame-btn2__outline--tall {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+  height: 100%;
+}
+.frame-btn2__outline--flat {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+  width: 100%;
+}
+.frame-btn2__line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.frame-btn2__line--tall:before, .frame-btn2__line--tall:after {
+  height: 100%;
+  width: 1px;
+  top: 0;
+ 
+}
+.frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--tall:before, .frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--tall:after {
+  transform: scaleY(0);
+}
+.frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--tall:before, .frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--tall:after {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+}
+.frame-btn2__line--tall:before {
+  left: 0;
+}
+.frame-btn2__line--tall:after {
+  right: 0;
+}
+.frame-btn2__line--flat:before, .frame-btn2__line--flat:after {
+  width: 100%;
+  height: 1px;
+  left: 0;
+}
+.frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--flat:before, .frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--flat:after {
+  transform: scaleX(0);
+}
+.frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--flat:before, .frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--flat:after {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+}
+.frame-btn2__line--flat:before {
+  top: 0;
+}
+.frame-btn2__line--flat:after {
+  bottom: 0;
+}
+.frame-btn2__line:before, .frame-btn2__line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #00ffff;
+  transition: 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn2:hover .frame-btn2__line:before, .frame-btn2:hover .frame-btn2__line:after {
+  transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 
 /*끝*/
 .login{

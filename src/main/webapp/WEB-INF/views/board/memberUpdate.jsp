@@ -86,16 +86,18 @@
     	 <input type="checkbox" class="checkBox" name="email_check" value="1" <c:if test="${dto.email_check}"> checked</c:if>> 
     	  <!-- <input class="inputBox" id="user-input" type="text" > -->
     	</h2>
-    			 <input type="submit" value="수정하기">
-    			 <button type="submit">수정하기</button>
-    			 <div class="neon_effect">
-               <button type="submit" class="mainBtn">
-                  <div class="back">
-                     <a class="btn btn--1"><p class="pGold">수정하기</p></a>
-
-                  </div>
-               </button>
-            </div>
+    			 
+    		<button type="submit" class="sujungBtn">
+    			  <a class="frame-btn2"> <span
+				class="frame-btn2__outline frame-btn2__outline--tall"> <span
+					class="frame-btn2__line frame-btn2__line--tall"></span> <span
+					class="frame-btn2__line frame-btn2__line--flat"></span>
+			</span> <span class="frame-btn2__outline frame-btn2__outline--flat"> <span
+					class="frame-btn2__line frame-btn2__line--tall"></span> <span
+					class="frame-btn2__line frame-btn2__line--flat"></span>
+			</span> <span class="frame-btn2__solid"></span> <span class="frame-btn2__text">수정하기</span>
+			</a></button>
+    		
     	</form>
   </div>  
 	   

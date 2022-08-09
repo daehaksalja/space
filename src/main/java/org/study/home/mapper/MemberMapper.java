@@ -26,6 +26,7 @@ public interface MemberMapper {
 	public void memberDelete(String user_id);
 
 	public MemberDTO memberRead(String user_no);
+	public MemberDTO memberRead2(String user_id);
 
 	public void memberUpdate(MemberDTO dto);
 

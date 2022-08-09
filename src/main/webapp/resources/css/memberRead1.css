@@ -7,6 +7,33 @@
 
  
 }
+.userText1{
+	margin-left: 30%;
+
+	
+}
+.userText2{
+	display:block;
+	justify-content: center;
+	text-align: center;
+	font-style: oblique;
+	
+}
+
+.userText1H2{
+	color: white;
+	margin-left: 26px
+}
+.userText2H2{
+	color: white;
+	margin-left: 26px
+}
+.footer{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
 .Logo{
 	text-decoration:none;
 	color:white;
@@ -263,14 +290,8 @@ h1{
    margin-left: 1%;
 }
 body {
-    background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
-}
+    background-color: black;
+} 
 
 .neon_effect p {
   text-align: center;
@@ -321,8 +342,12 @@ background-size:16px 16px;
 }
 .neon_effect .pGold:first-child{
   color: #fff;
-  animation: neon3 1.5s ease-in-out infinite alternate;
-}
+  animation: neon3 50s ease-in-out infinite alternate;}
+.neon_effect .pWhite:first-child{
+	margin-left:33px;
+ color: #fff;
+   animation: neon1 1000s ease-in-out infinite alternate;}
+
 .neon_effect .exitBtn:first-child{
   color: #fff;
  font-family: 'Song Myung', serif;

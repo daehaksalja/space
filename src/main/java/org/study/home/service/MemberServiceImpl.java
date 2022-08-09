@@ -104,6 +104,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@Override
+	public MemberDTO memberRead2(String user_id) {
+		return mapper.memberRead2(user_id);
+	}
+
 
 	
 }

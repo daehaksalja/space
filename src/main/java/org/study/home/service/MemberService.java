@@ -22,6 +22,7 @@ public interface MemberService {
 	List<MemberDTO> userList();
 
 	MemberDTO memberRead(String user_no);
+	MemberDTO memberRead2(String user_id);
 	
 	void memberUpdate(MemberDTO dto);
 }

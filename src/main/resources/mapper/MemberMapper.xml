@@ -49,6 +49,10 @@
 		SELECT * FROM userTBL WHERE user_no = #{user_no}
 	</select>
 	
+	<select id="memberRead2"
+      resultType="org.study.home.model.MemberDTO">
+      SELECT * FROM userTBL WHERE user_id = #{user_id}
+   </select>
 	
 
 	<select id="getRealisAdmin" resultType="String">

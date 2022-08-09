@@ -8,8 +8,9 @@
 </head>
 <link rel="stylesheet" href="../../../resources/css/memberRead1.css">
 <body>
-
+ 	
    <div class="header">
+   
 			<h1 class="Logo"> <a href="/memberRead2?user_no=${sessionScope.user_no}">SPACE SHIP</a></h1>
 
 			<a href="/moveMakeWeb2" class="a1">역사</a> <a href="/moveMakeWeb3"
@@ -28,16 +29,30 @@
 			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">로그아웃</span>
 			</a>
 			</div>
-   
-   <h1 class="header">회원상세보기</h1>
-   아이디 : ${dto.user_id} <br>
-   닉네임 : ${dto.user_nick}<br>
-   전화번호 : ${dto.user_phone}<br>
-   이메일 : ${dto.user_email}<br>
-   성인여부 : ${dto.user_adult}<br>
-   이메일 수신여부 : ${dto.email_check}<br>
-   
-   <a href="/memberUpdate?user_no=${dto.user_no}">수정하러 가기</a> <br>
-   <a href="/">목록으로</a>
+  <div class="neon_effect">
+   <h1 class="pGold">My Information</h1>
+   <div class="userText1">
+	  <h2 class="userText1H2">ID <br>
+	   Name  <br>
+	   Phone  <br>
+	   E-Mail <br>
+	   are you an adult?  <br>
+	   receive E-Mail </h2>
+    </div>
+ <div class="userText2">
+    	<h2 class="userText2H2">
+    	${dto.user_id} <br>
+    	${dto.user_nick}<br>
+    	${dto.user_phone}<br>
+    	${dto.user_email}<br>
+    	${dto.user_adult}<br>
+    	${dto.email_check}
+    	</h2>
+     </div>
+	   <div class="footer">
+	   <a href="/memberUpdate?user_no=${dto.user_no}">수정하러 가기</a><br>
+	   <a href="/">목록으로</a>
+	   </div>
+   </div>
 </body>
 </html>

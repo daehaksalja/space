@@ -78,24 +78,15 @@
 <form action="/memberUpdate" method="post">
     	<h2 class="userText2H2">
     	<input type="hidden" name="user_no" value="${dto.user_no}">
-    	<input type="text" class="input-ty1" name="user_id" value="${dto.user_id}"><br>
-    	<input type="text" class="input-ty1" name="user_nick" value="${dto.user_nick}"><br>
-    	<input type="text" class="input-ty1" name="user_phone" value="${dto.user_phone}"><br>
-    	<input type="email"class="input-ty1" name="user_email" value="${dto.user_email}"><br>
-    	<input type="checkbox" class="checkBox" name="user_adult" value="1" <c:if test="${dto.user_adult}"> checked</c:if>><br>
-    	 <input type="checkbox" class="checkBox" name="email_check" value="1" <c:if test="${dto.email_check}"> checked</c:if>> 
-    	  <!-- <input class="inputBox" id="user-input" type="text" > -->
+    	<input type="text" name="user_id" value="${dto.user_id}"><br>
+    	<input type="text" name="user_nick" value="${dto.user_nick}"><br>
+    	<input type="text" name="user_phone" value="${dto.user_phone}"><br>
+    	<input type="email" name="user_email" value="${dto.user_email}"><br>
+    	<input type="checkbox" name="user_adult" value="1" <c:if test="${dto.user_adult}"> checked</c:if>><br>
+    	 <input type="checkbox" name="email_check" value="1" <c:if test="${dto.email_check}"> checked</c:if>> 
+    	  <input class="inputBox" id="user-input" type="text" >
     	</h2>
     			 <input type="submit" value="수정하기">
-    			 <button type="submit">수정하기</button>
-    			 <div class="neon_effect">
-               <button type="submit" class="mainBtn">
-                  <div class="back">
-                     <a class="btn btn--1"><p class="pGold">수정하기</p></a>
-
-                  </div>
-               </button>
-            </div>
     	</form>
   </div>  
 	   

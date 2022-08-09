@@ -28,7 +28,7 @@
 
    <interceptors>
       <interceptor>
-         <mapping path="/adminMember/**" />
+         <mapping path="/adminMenu/**" />
          <beans:ref bean="AdminInterceptor" />
       </interceptor>
    </interceptors>

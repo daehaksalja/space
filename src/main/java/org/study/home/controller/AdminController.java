@@ -21,12 +21,16 @@ public class AdminController {
    private MemberService memberService;
    private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
   
-   @GetMapping("/adminMember")
+   @GetMapping("/adminMenu/adminMember")
    public String adminMember(Model model) {
 
       List<MemberDTO> list = memberService.userList();
       model.addAttribute("list", list);
 
       return "board/adminMember";
+   }
+   @GetMapping("/adminMenu")
+   public String adminMenu() {
+      return "board/adminMenu";
    }
 }

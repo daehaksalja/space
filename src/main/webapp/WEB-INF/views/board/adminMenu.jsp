@@ -10,10 +10,9 @@
 <h1>관리자 메뉴</h1>
 
 <a href="/adminMenu/adminMember">회원관리</a> <br>
-<a href="#">상품 등록</a> <br>
-<a href="#">상품 목록</a> <br>
-<a href="#">판매자 등록</a> <br>
-<a href="#">판매자 관리</a> <br>
+<a href="/adminMenu/goodsEnroll">상품 등록</a> <br>
+<a href="/adminMenu/goodsManage">상품 목록</a> <br>
+
 
 
 h1>관리자 메뉴</h1>

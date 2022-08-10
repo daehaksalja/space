@@ -61,7 +61,7 @@ body {
 
 						<div class="inputTag">
 							<div class="errorMsg" id="errorMsg"></div>
-							<div class="highlight"></div>
+							<!-- <div class="highlight"></div> -->
 
 							<div class="form-box">
 
@@ -116,8 +116,11 @@ body {
 			</div>
 
 			<script>
-				/* var focus = false;
+				/*  var focus = false;
 				$("input").on("focus", function(e) {
+			
+						
+					
 					console.log(e.currentTarget.id);
 					var cur = e.currentTarget.id;
 					var cur = $("#" + cur);
@@ -125,7 +128,9 @@ body {
 					var curHeight = cur.css("height");
 					var top = cur.offset().top;
 					var left = cur.offset().left;
-
+		
+				
+			
 					if (focus) {
 						$(".highlight").animate({
 							top : top,
@@ -141,9 +146,12 @@ body {
 							left : left,
 							width : curWidth,
 							height : curHeight
+						
 						});
+			
 					}
-				}); */
+				
+				});  */
 
 				$("#errorMsg").hide();
 

@@ -146,6 +146,7 @@ button {
 	-webkit-appearance: none;
 }
 
+
 .mainText {
 	font-family: 'Song Myung', serif;
 	display: flex;
@@ -158,7 +159,7 @@ button {
 	margin-bottom:-10px;
 	top: 200px;
 	width: 150px;
-	color: white;
+	color: #00ffff;
 }
 
 
@@ -171,7 +172,7 @@ button {
 }
 
 .mainText2{
-	color: white;
+	color: #00ffff;
 	font-family: 'Song Myung', serif;
 }
 
@@ -192,21 +193,23 @@ button {
 	margin-top: 20px;
 	display: flex;
 	justify-content: center;
-	color: white;
+	color: #00ffff;
 
 }
 
 .errorMsg {
+	border: none; 
+    background: transparent;
 	font-family: 'Song Myung', serif;
 	padding-top:10px;
 	 margin-left:35px;
 	 margin-bottom: 28px;
 	width:430px;
 	border-radius:10px;
-	color: white;
+	color: red;
 	font-weight: lighter;
 	height: 30px;
-	background-color: black;
+	border: 1px solid red;
 }
 
 
@@ -327,23 +330,29 @@ button {
     /*   outline: none; 이동하는 인풋테두리*/ 
     }
     .form-box {
+    
     margin-left:35px;
       width: 80%;
       border-radius: 10px;
       text-align: center;
     }
     .input-ty1 {
+    
+    border: none; 
+    background: transparent;
       display: inline-block;
       width: 430px;
       margin-bottom: 28px;
       height: 40px;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #00ffff;
       padding: 8px;
       box-sizing: border-box;
     }
+  
     
     .highlight {
+    
       position: absolute;
       box-sizing: border-box;
       border: 5px solid #ccc;

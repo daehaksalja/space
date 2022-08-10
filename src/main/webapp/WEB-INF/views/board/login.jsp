@@ -1,11 +1,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-
+<style>
+#videobcg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-width: 1920px;
+	min-height: 1080px;
+	width: 100%;
+	height: 100%;
+	z-index: -1000;
+	overflow: hidden;
+}
+</style>
 <title>대문</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,38 +52,44 @@ body {
 
 <body>
 
+
 	<c:if test="${empty sessionScope.user_no}">
 
 
-		<div class="tiledBackground">
 
 
 
+		<video id="videobcg" preload="auto" autoplay="true" loop="loop"
+	muted="muted">
 
-			<div class="page">
+	<source src="../../../resources/css/star_ship_king.mov" type="video/mp4">
 
-				<form method="post" action="/login" id="customerLogin" name="login">
-					<div class="neon_effect">
-						<h1 class="mainText">
-							<p>로그인</p>
-						</h1>
-						<div>
-							<p class="mainText2">아이디와 비밀번호를 입력해 주시오.</p>
+</video>
+
+		<div class="page">
+
+			<form method="post" action="/login" id="customerLogin" name="login">
+				<div class="neon_effect">
+					<h1 class="mainText">
+						<p>로그인</p>
+					</h1>
+					<div>
+						<p class="mainText2">아이디와 비밀번호를 입력해 주시오.</p>
+					</div>
+
+
+					<div class="inputTag">
+						<div class="errorMsg" id="errorMsg"></div>
+						<!-- <div class="highlight"></div> -->
+
+						<div class="form-box">
+
+							<input type="text" name="user_id" id="id" class="input-ty1"
+								placeholder="아이디" /> <input type="password" name="user_pw"
+								id="pw" class="input-ty1" placeholder="비밀번호" />
+
 						</div>
-
-
-						<div class="inputTag">
-							<div class="errorMsg" id="errorMsg"></div>
-							<!-- <div class="highlight"></div> -->
-
-							<div class="form-box">
-
-								<input type="text" name="user_id" id="id" class="input-ty1"
-									placeholder="아이디" /> <input type="password" name="user_pw"
-									id="pw" class="input-ty1" placeholder="비밀번호" />
-
-							</div>
-							<!-- <div class="textBox1">
+						<!-- <div class="textBox1">
 							<input type="text" class="textBoxInput1" name="user_id" id="id"
 								required="required" placeholder="아이디" aria-label="ID">
 						</div>
@@ -85,85 +104,85 @@ body {
 						</div> -->
 
 
-							
 
 
-							<button type="submit" id="loginBtn" class="sujungBtn">
-								<a class="frame-btn2"> <span
-									class="frame-btn2__outline frame-btn2__outline--tall"> <span
-										class="frame-btn2__line frame-btn2__line--tall"></span> <span
-										class="frame-btn2__line frame-btn2__line--flat"></span>
-								</span> <span class="frame-btn2__outline frame-btn2__outline--flat">
-										<span class="frame-btn2__line frame-btn2__line--tall"></span>
-										<span class="frame-btn2__line frame-btn2__line--flat"></span>
-								</span> <span class="frame-btn2__solid"></span> <span
-									class="frame-btn2__text">로그인하기</span>
-								</a>
-							</button>
+
+						<button type="submit" id="loginBtn" class="sujungBtn">
+							<a class="frame-btn2"> <span
+								class="frame-btn2__outline frame-btn2__outline--tall"> <span
+									class="frame-btn2__line frame-btn2__line--tall"></span> <span
+									class="frame-btn2__line frame-btn2__line--flat"></span>
+							</span> <span class="frame-btn2__outline frame-btn2__outline--flat">
+									<span class="frame-btn2__line frame-btn2__line--tall"></span> <span
+									class="frame-btn2__line frame-btn2__line--flat"></span>
+							</span> <span class="frame-btn2__solid"></span> <span
+								class="frame-btn2__text">로그인하기</span>
+							</a>
+						</button>
 
 
-							<div class="goRegister">
-								<span class="registText"><p>계정이 없습니까?</p></span> <a
-									href="/moveRegist" class="registText2"><p>회원가입하러 가기</p></a>
+						<div class="goRegister">
+							<span class="registText"><p>계정이 없습니까?</p></span> <a
+								href="/moveRegist" class="registText2"><p>회원가입하러 가기</p></a>
 
-							</div>
 						</div>
 					</div>
-				</form>
-
-
-
-			</div>
-
-			<script>
-				/*  var focus = false;
-				$("input").on("focus", function(e) {
-			
-						
-					
-					console.log(e.currentTarget.id);
-					var cur = e.currentTarget.id;
-					var cur = $("#" + cur);
-					var curWidth = cur.css("width");
-					var curHeight = cur.css("height");
-					var top = cur.offset().top;
-					var left = cur.offset().left;
-		
-				
-			
-					if (focus) {
-						$(".highlight").animate({
-							top : top,
-							left : left,
-							width : curWidth,
-							height : curHeight
-						}, 500);
-					} else {
-						focus = true;
-						$(".highlight").css({
-							opacity : 1,
-							top : top,
-							left : left,
-							width : curWidth,
-							height : curHeight
-						
-						});
-			
-					}
-				
-				});  */
-
-				$("#errorMsg").hide();
-
-				<c:if test="${msg==false}">
-				$("#errorMsg").show();
-				$("#errorMsg").html("아이디와 비밀번호를 다시확인하십쇼");
-				</c:if>
-			</script>
+				</div>
+			</form>
 
 
 
 		</div>
+
+		<script>
+			/*  var focus = false;
+			$("input").on("focus", function(e) {
+			
+					
+				
+				console.log(e.currentTarget.id);
+				var cur = e.currentTarget.id;
+				var cur = $("#" + cur);
+				var curWidth = cur.css("width");
+				var curHeight = cur.css("height");
+				var top = cur.offset().top;
+				var left = cur.offset().left;
+			
+			
+			
+				if (focus) {
+					$(".highlight").animate({
+						top : top,
+						left : left,
+						width : curWidth,
+						height : curHeight
+					}, 500);
+				} else {
+					focus = true;
+					$(".highlight").css({
+						opacity : 1,
+						top : top,
+						left : left,
+						width : curWidth,
+						height : curHeight
+					
+					});
+			
+				}
+			
+			});  */
+
+			$("#errorMsg").hide();
+
+			<c:if test="${msg==false}">
+			$("#errorMsg").show();
+			$("#errorMsg").html("아이디와 비밀번호를 다시확인하십쇼");
+			</c:if>
+		</script>
+
+
+
+
 
 	</c:if>
 </body>

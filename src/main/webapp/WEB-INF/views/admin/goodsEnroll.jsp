@@ -35,7 +35,7 @@
 /* 취소 버튼 */
 $("#cancelBtn").click(function(){
 	
-	location.href="/adminMenu/goodsManage"
+	location.href="/adminMenu"
 	
 });
 

@@ -10,6 +10,19 @@
 <html lang="en">
 <head>
 
+<style>
+#videobcg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-width: 1920px;
+	min-height: 1080px;
+	width: 100%;
+	height: 100%;
+	z-index: -1000;
+	overflow: hidden;
+}
+</style>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +33,34 @@
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="${path}/resources/css/regist.css">
+
+<style>
+html, body, div, video {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 0px, 0px, 0px, 0px;
+	margin: 0px, 0px, 0px, 0px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.container {
+	
+}
+</style>
 </head>
 <body>
+	<video id="videobcg" preload="auto" autoplay="true" loop="loop"
+	muted="muted">
+
+	<source src="../../../resources/css/star_ship_king.mov" type="video/mp4">
+
+
+
+</video>
 
 
 	<div class="page">
@@ -41,7 +80,7 @@
 				<div class="form-box">
 
 					<input type="text" name="user_id" id="id" class="input-ty"
-						placeholder="아이디" autofocus="" />
+						placeholder="아이디" />
 					<!-- <button type="button" class="duplcheck" id="duplcheck">중복체크</button> -->
 
 					<!-- <button type="button" name="signup" id="duplcheck" class="mainBtn2">
@@ -285,7 +324,7 @@
 								}
 								if (data != "bad") {
 									$(".id.regex").html("사용가능");
-									$(".id.regex").css("color", "green");
+									$(".id.regex").css("color", "#50ff00");
 									idCheck = true;
 									return;
 								}
@@ -419,7 +458,7 @@
 						}
 						if (data != "bad") {
 							$(".name.regex").html("사용가능");
-							$(".name.regex").css("color", "green");
+							$(".name.regex").css("color", "#50ff00");
 							nickCheck = true;
 							return;
 						}
@@ -488,7 +527,7 @@
 													$(".email.regex").html(
 															"사용가능");
 													$(".email.regex").css(
-															"color", "green");
+															"color", "#50ff00");
 													emailCheck = true;
 													return;
 												}
@@ -532,7 +571,7 @@
 				var checkResult = $("#mail_check_input_box_warn"); // 비교 결과   
 				if (inputCode == code) { // 일치할 경우
 					checkResult.html("인증번호가 일치합니다.");
-					$(".emailCheck.regex").css("color", "green");
+					$(".emailCheck.regex").css("color", "#50ff00");
 					emailNumCheck = true;
 				} else { // 일치하지 않을 경우
 					checkResult.html("인증번호를 다시 눈닦고 확인해주세요.");

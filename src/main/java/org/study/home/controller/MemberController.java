@@ -50,7 +50,7 @@ public class MemberController {
 	public String registProcess(/* @RequestParam("user_id")String user_id, */ MemberDTO dto) {
 		/* memberService.memberIDcheck(user_id); */
 		memberService.memberInsert(dto);
-		return "redirect:/community";
+		return "redirect:/";
 	}
 
 	@GetMapping("/moveLogin")

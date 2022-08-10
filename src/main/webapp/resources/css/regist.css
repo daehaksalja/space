@@ -1,6 +1,9 @@
 
 
-
+.sujungBtn{
+	margin-top: 20px;
+	
+}
 
 .frame-btn2 {
   line-height: 35px;
@@ -196,9 +199,10 @@ a {
 	text-decoration: none;
 }
 
-body{background-image: url("earth.jpg");
-
-	  background-size: cover;
+body{
+/* 	background-image: url("earth.jpg"); */
+   
+	  background-size: 1500px;
 		display: flex;
 	justify-content: center;
 }
@@ -229,6 +233,7 @@ height:420px;
 }
 
 .mainText2 {
+	font-size: large;
 	font-family: 'Song Myung', serif;
 	display: flex;
 	justify-content: center;
@@ -248,15 +253,7 @@ height:420px;
 
 
 
-.inputTag {
-	display: grid;
-     font-family: Avenir;
-     -webkit-text-size-adjust: 100%;
-     -webkit-font-smoothing: antialiased;
-     overflow: hidden;
-     margin-top:30px;
-	
-}
+
 
 .goRegister {
 	font-family: 'Song Myung', serif;
@@ -265,6 +262,7 @@ height:420px;
 	margin-top: 20px;
 	display: flex;
 	justify-content: center;
+	color:#00ffff;
 
 }
 
@@ -279,15 +277,16 @@ height:420px;
 	border-radius:10px;
 	color: red;
 	font-weight: lighter;
-	height: 50px;
-	background-color: #e4c4c4;
+	height: 42px;
 	border: 1px solid red;
 }
 
 .regex{
 	font-family: 'Song Myung', serif;
 	margin-left: 22px;
+	margin-top:15px;
 }
+
 
 .duplcheck{
 	position: absolute;
@@ -445,32 +444,62 @@ height:420px;
       border-radius: 10px;
       text-align: center;
     }
+    
+    .inputTag {
+	display: grid;
+     font-family: Avenir;
+     -webkit-text-size-adjust: 100%;
+     -webkit-font-smoothing: antialiased;
+     overflow: hidden;
+     margin-top:30px;
+	
+}
+    /* 첫번쨰 인풋 */
      .input-ty {
+     font-size: large;
+         font-weight:55px;
+      border: none; 
+    background: transparent;
      font-family: 'Song Myung', serif;
       display: inline-block;
       width: 430px;
       height: 40px;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 2px solid #00ffff;
       padding: 8px;
       box-sizing: border-box;
+      color: #00ffff;
     }
+     /* 나머지 인풋 */
     .input-ty1 {
+    font-size: large;
+        font-weight:55px;
+      border: none; 
+    background: transparent;
     font-family: 'Song Myung', serif;
       display: inline-block;
       width: 430px;
-      margin-top: 28px;
+      margin-top: 18px;
       height: 40px;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 2px solid #00ffff;
       padding: 8px;
       box-sizing: border-box;
+      color: #00ffff;
+    }
+    .input-ty::placeholder{
+    font-size: large;
+     color: #00ffff;
+    }
+    .input-ty1::placeholder{
+    font-size: large;
+     color: #00ffff;
     }
     
     .highlight {
       position: absolute;
       box-sizing: border-box;
-      border: 5px solid #ccc;
+      border: 1px solid #ccc;
       box-shadow: 4px 4px 4px #ccc;
       width: 0;
       height: 0;
@@ -480,9 +509,11 @@ height:420px;
 
 
 .checkBoxText{
+	color: #00ffff;
 	 font-family: 'Song Myung', serif;
 }
 .checkDiv{
+	margin-left: 30px;
 	margin-top: 20px;
 }
 
@@ -566,16 +597,31 @@ height:420px;
 
 /* 이메일 인증관련*/
 #mail_check_input_box_false{
-    background-color:rgb(255, 255, 255);
+	
+	color:#00ffff;
+	margin-left:30px;
+   
 }
  
 #mail_check_input_box_true{
-    background-color:rgb(255, 255, 255);
+	color:#00ffff;
+	 margin-left:30px;
+  
+}
+.mail_check_button{
+ margin-left:20px;
+     color: #00ffff; 
+     margin-bottom: 5px;
+    }
+.emailCheck{
+	margin-left: 28px;
 }
 
-
-
 .mail_check_input{
+	padding-left:10px;
+	 border: 1px solid #00ffff;
+    background: transparent;
+	color:#00ffff;
    width: 300px;
    height: 35px;
    border-radius: 10px;
@@ -583,4 +629,7 @@ height:420px;
    margin-bottom: 10px;
 
 }
-
+.mail_check_input::placeholder{
+     color: #00ffff;
+    }
+    

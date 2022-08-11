@@ -16,7 +16,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 
       System.out.println("dfdfsdfsdf" + member);
       if (member == null) {
-         res.sendRedirect("/moveLogin");
+         res.sendRedirect("redirect:/");
          return false;
       }
       if (member.getAdminCk() != 1) {

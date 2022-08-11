@@ -9,9 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.study.home.mapper.MemberMapper;
+import org.study.home.model.Criteria;
 import org.study.home.model.MemberDTO;
+import org.study.home.model.PageDTO;
 import org.study.home.model.ShipDTO;
 import org.study.home.service.AdminService;
 import org.study.home.service.MemberService;
@@ -45,10 +49,24 @@ public class AdminController {
    public String goodsEnroll() {
          return "admin/goodsEnroll";
       }
-   @GetMapping("/adminMenu/goodsManage")
-   public String goodsManage() {
-         return "admin/goodsManage";
+   @RequestMapping(value = "/adminMenu/goodsManage", method= RequestMethod.GET)
+   public void goodsManage(Criteria cri, Model model) throws Exception {
+      /* 상품 리스트 데이터 */
+
+      cri.setSkip((cri.getPageNum()-1)*10);
+      List<ShipDTO> list = adminService.goodsGetList(cri);
+      
+      if(!list.isEmpty()) {
+         model.addAttribute("list", list);
+      } else {
+         model.addAttribute("listCheck", "empty");
+         return;
       }
+      
+      /* 페이지 인터페이스 데이터 */
+      model.addAttribute("pageMaker", new PageDTO(cri, adminService.goodsGetTotal(cri)));
+
+   }
    /* 상품 등록 */
    @PostMapping("/adminMenu/goodsEnroll")
    public String goodsEnrollPOST(ShipDTO ship, RedirectAttributes rttr) {
@@ -61,6 +79,7 @@ public class AdminController {
       
       return "redirect:/adminMenu/goodsManage";
    }   
+   
    
    
 }

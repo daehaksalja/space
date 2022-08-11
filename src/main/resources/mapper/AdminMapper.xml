@@ -8,6 +8,31 @@
 		values(#{shipName},#{shipPrice},#{shipStock},#{shipIntro})
 
   	</insert>
-
+<!--   상품 리스트  -->
+   <select id="goodsGetList" resultType="org.study.home.model.ShipDTO">
+   
+      select  shipId,shipName, shipStock, a.regDate
+      from shipTBL a 
+      <if test="keyword != null">
+         where (shipName like concat ('%', #{keyword}, '%'))
+      </if>
+      order by shipId desc 
+      limit #{skip}, #{amount}      
+   
+   </select>
+   
+   
+<!--    상품 총 갯수 -->
+     <select id="goodsGetTotal" resultType="int">
+     
+        select count(*) from shipTBL
+        
+        <if test="keyword != null">
+        
+           where shipName like concat('%' , #{keyword}, '%')
+        
+        </if>
+     
+     </select>
 
   </mapper>

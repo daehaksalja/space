@@ -201,7 +201,7 @@ a {
 
 body{
 /* 	background-image: url("earth.jpg"); */
-   
+    overflow: inherit;
 	  background-size: 1500px;
 		display: flex;
 	justify-content: center;

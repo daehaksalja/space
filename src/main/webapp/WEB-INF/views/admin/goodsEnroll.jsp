@@ -15,17 +15,17 @@
 <body>
  <form action="/adminMenu/goodsEnroll" method="post" id="enrollForm">
  	<label>SPACE SHIP NAME</label>
-    <input name="shipName"> <br>
+    <input name="shipName" required="required" type="text"> <br>
     <label>SPACE SHIP PRICE</label>
-    <input name="shipPrice" value="0"><br>
+    <input name="shipPrice"  required="required" type="number"><br>
     <label>SPACE SHIP STOCK (TIP:재고)</label>
-    <input name="shipStock" value="0"><br>
+    <input name="shipStock"  required="required" type="number"><br>
     <label>SPACE SHIP INTRO</label>
-    <input name="shipIntro">
-
+    <input name="shipIntro" required="required"  type="text">
+<br>
+<button type="submit" id="enrollBtn" class="btn enroll_btn">등 록</button>
  </form>
      <button id="cancelBtn" class="btn">취 소</button>
-	<button type="submit" id="enrollBtn" class="btn enroll_btn">등 록</button>
 
 
  <script>
@@ -40,13 +40,13 @@ $("#cancelBtn").click(function(){
 });
 
 /* 상품 등록 버튼 */
-$("#enrollBtn").on("click",function(e){
+/* $("#enrollBtn").on("click",function(e){
 	
 	e.preventDefault();
 	
 	enrollForm.submit();
 
-});
+}); */
 
 </script> 
 </body>

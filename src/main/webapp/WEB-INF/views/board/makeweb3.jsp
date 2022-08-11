@@ -34,7 +34,7 @@
 
 
 			<a href="/moveMakeWeb5" class="a1">우주인채용</a> <a class="frame-btn"
-				href="/memberRead?user_no=${sessionScope.user_no}"> <span
+				href="/memberRead?user_no=${sessionScope.user_no}" > <span
 				class="frame-btn__outline frame-btn__outline--tall"> <span
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>
@@ -42,7 +42,20 @@
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>
 			</span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">마이페이지</span>
-			</a> <a class="frame-btn" href="/logout" id="logoutBtn"> <span
+			</a> 
+			<c:if test="${isAdmin == 1}">
+        <a class="frame-btn" href="/adminMenu" id="logoutBtn"> <span
+            class="frame-btn__outline frame-btn__outline--tall"> <span
+               class="frame-btn__line frame-btn__line--tall"></span> <span
+               class="frame-btn__line frame-btn__line--flat"></span>
+         </span> <span class="frame-btn__outline frame-btn__outline--flat"> <span
+               class="frame-btn__line frame-btn__line--tall"></span> <span
+               class="frame-btn__line frame-btn__line--flat"></span>
+         </span> <span class="frame-btn__solid"></span> <span class="frame-btn__text">admin</span>
+         </a>
+         
+         </c:if>
+			<a class="frame-btn" href="/logout" id="logoutBtn"> <span
 				class="frame-btn__outline frame-btn__outline--tall"> <span
 					class="frame-btn__line frame-btn__line--tall"></span> <span
 					class="frame-btn__line frame-btn__line--flat"></span>

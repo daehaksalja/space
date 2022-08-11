@@ -33,6 +33,7 @@
 </head>
 
 <style>
+/* 깔끔하게 스크롤바싹없애는 */
 html, body, div, video {
 	margin: 0;
 	padding: 0;

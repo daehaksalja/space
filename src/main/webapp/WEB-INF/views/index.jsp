@@ -59,7 +59,7 @@
 	<c:if test="${empty sessionScope.user_no}">
 		<div class="header">
 			<h1 class="Logo">
-				<a href="/moveMemberRead2"> SPACE SHIP</a>
+				<a href="/adminMenu"> SPACE SHIP</a>
 			</h1>
 			<a href="/moveMakeWeb2" class="a1">역사</a> <a href="/moveMakeWeb3"
 				class="a1">사업분야</a> <a href="/moveMakeWeb4" class="a1">ufo</a> <a

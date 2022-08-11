@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="${path}/resources/css/regist.css">
 
 <style>
-html, body, div, video {
+/* html, body, div, video {
 	margin: 0;
 	padding: 0;
 }
@@ -49,7 +49,7 @@ body {
 
 .container {
 	
-}
+} */
 </style>
 </head>
 <body>

@@ -21,7 +21,7 @@
     <label>SPACE SHIP STOCK (TIP:재고)</label>
     <input name="shipStock"  required="required" type="number"><br>
     <label>SPACE SHIP INTRO</label>
-    <input name="shipIntro" required="required"  type="text">
+    <input name="shipIntro" required="required" type="text">
 <br>
 <button type="submit" id="enrollBtn" class="btn enroll_btn">등 록</button>
  </form>

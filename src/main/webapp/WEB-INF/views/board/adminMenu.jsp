@@ -15,7 +15,7 @@
 
 
 
-h1>관리자 메뉴</h1>
+<h1>관리자 메뉴</h1>
 <ul>
 <li><a href="/adminMenu/adminMember">회원관리</a> </li>
 <li><a href="#">상품 등록</a> </li>

@@ -9,7 +9,7 @@ import org.study.home.model.Criteria;
 import org.study.home.model.ShipDTO;
 
 import lombok.extern.log4j.Log4j;
-
+import org.study.home.model.ShipDTO;
 @Service
 
 public class AdminServiceImpl implements AdminService{
@@ -37,4 +37,17 @@ System.out.println("shipEnroll");
 	      System.out.println("goodsGetTotal()........." + cri);
 	      return adminMapper.goodsGetTotal(cri);
 	   }
+
+	@Override
+	public ShipDTO goodsRead(String shipId) {
+		return adminMapper.goodsRead(shipId);
+	}
+
+	@Override
+	public void goodsUpdate(ShipDTO dto) {
+		adminMapper.goodsUpdate(dto);
+		
+	}
+	
+	 
 }

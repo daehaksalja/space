@@ -7,7 +7,12 @@
 <title>회원등록</title>
 </head>
 <link rel="stylesheet" href="../../../resources/css/memberRead1.css">
+
+
 <body>
+
+
+
  	
    <div class="header">
    

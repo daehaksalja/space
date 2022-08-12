@@ -34,5 +34,17 @@
         </if>
      
      </select>
+     
+     <select id="goodsRead" resultType="org.study.home.model.ShipDTO">
+      SELECT * FROM shipTBL WHERE shipId = #{shipId}
+   </select>
+   
+   
+   <update id="goodsUpdate">
+
+		UPDATE shipTBL SET shipName = #{shipName},shipPrice
+		= #{shipPrice},shipStock = #{shipStock},shipIntro =
+		#{shipIntro} WHERE shipId = #{shipId}
+	</update>
 
   </mapper>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.study.home.mapper.MemberMapper;
 import org.study.home.model.Criteria;
@@ -79,6 +80,29 @@ public class AdminController {
       
       return "redirect:/adminMenu/goodsManage";
    }   
+   
+   @GetMapping("/goodsRead")
+   public String goodsRead(@RequestParam("shipId")String shipId, Model model) {
+    ShipDTO dto= adminService.goodsRead(shipId);
+    model.addAttribute("dto",dto);
+      return "adminMenu/goodsRead";
+   }
+   
+   @GetMapping("/goodsUpdate")
+   public String goodsUpdate(@RequestParam("shipId")String shipId, Model model) {
+	   ShipDTO dto=adminService.goodsRead(shipId);
+       model.addAttribute("dto",dto);
+      return "adminMenu/goodsUpdate";
+   }
+   
+   @PostMapping("/goodsUpdate")
+   public String goodsUpdateProcess(ShipDTO dto) {
+      adminService.goodsUpdate(dto);
+      System.out.println("update ----" + dto.toString());
+      
+  return "redirect:/goodsRead?shipId="+dto.getShipId();
+   }
+
    
    
    
